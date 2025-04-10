@@ -5,22 +5,30 @@ interface ContainerProps extends React.HTMLAttributes<HTMLElement> {
   children?: ReactNode
   style?: CSSProperties
   className?: string
+  tabs?: boolean
 }
 
 export default function Container({
   children,
   style,
   className,
+  tabs = true,
   ...rest
 }: ContainerProps) {
   return (
-    <main
-      className={`shadow-bg bg-background relative mx-auto h-dvh w-full max-w-4xl bg-[url('/background.png')] bg-cover bg-center ${className}`}
-      style={style}
-      {...rest}
-    >
-      {children}
-      <Tabs />
+    <main className="shadow-bg bg-background relative mx-auto h-dvh w-full max-w-4xl bg-[url('/background.png')] bg-cover bg-center">
+      <div
+        className={`w-full overflow-y-auto p-5 [&::-webkit-scrollbar]:hidden ${tabs ? 'pt-8' : ''} ${className}`}
+        style={{
+          height: tabs ? 'calc(100dvh - 60px)' : '100dvh',
+          ...style
+        }}
+        {...rest}
+      >
+        {children}
+      </div>
+
+      {tabs && <Tabs />}
     </main>
   )
 }
