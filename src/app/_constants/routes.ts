@@ -1,6 +1,7 @@
 export const ROUTES = {
-  // INDEX: '/',
-  HOME: '/',
+  INDEX: '/',
+  HOME: '/home',
   ACTIVITIES: '/activities',
-  PROFILE: '/profile'
+  PROFILE: '/profile',
+  LEGAL: '/legal'
 } as const

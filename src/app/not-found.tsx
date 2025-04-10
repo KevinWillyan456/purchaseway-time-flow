@@ -2,10 +2,14 @@ import Container from '@/app/_components/Container'
 import Link from 'next/link'
 import { Button } from './_components/ui/button'
 import { Card, CardContent } from './_components/ui/card'
+import { ROUTES } from './_constants/routes'
 
 export default function NotFound() {
   return (
-    <Container className="flex items-center justify-center pt-5" tabs={false}>
+    <Container
+      className="animate-fade-in flex items-center justify-center pt-5"
+      tabs={false}
+    >
       <Card>
         <CardContent className="flex flex-col items-center justify-center text-center">
           <h1 className="text-2xl font-bold">Opps!</h1>
@@ -17,7 +21,7 @@ export default function NotFound() {
             Você pode voltar para a página inicial clicando no botão abaixo.
           </p>
           <Button asChild variant="default" className="mt-6 w-full" size="lg">
-            <Link href="/">Voltar para a página inicial</Link>
+            <Link href={ROUTES.HOME}>Voltar para a página inicial</Link>
           </Button>
         </CardContent>
       </Card>
