@@ -15,7 +15,7 @@ export default function Container({
 }: ContainerProps) {
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-center bg-gray-100 py-2 ${className}`}
+      className={`shadow-bg bg-background relative mx-auto h-dvh w-full max-w-4xl bg-[url('/background.png')] bg-cover bg-center ${className}`}
       style={style}
       {...rest}
     >

@@ -19,8 +19,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-br" className={`${openSans.className} antialiased`}>
-      <body>{children}</body>
+    <html lang="pt-br">
+      <body
+        className={`${openSans.className} bg-primary from-primary overflow-hidden bg-gradient-to-bl to-black antialiased`}
+      >
+        {children}
+      </body>
     </html>
   )
 }
