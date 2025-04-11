@@ -13,7 +13,7 @@ export default function NotFound() {
         paddingTop: '20px'
       }}
     >
-      <Card>
+      <Card className="py-6">
         <CardContent className="flex flex-col items-center justify-center text-center">
           <h1 className="text-2xl font-bold">Opps!</h1>
           <p className="mt-4 text-sm text-gray-300">
