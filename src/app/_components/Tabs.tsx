@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ROUTES } from '../_constants/routes'
 
-const Tabs = () => {
+export function Tabs() {
   const pathname = usePathname()
 
   const tabs = [
@@ -31,5 +31,3 @@ const Tabs = () => {
     </div>
   )
 }
-
-export default Tabs

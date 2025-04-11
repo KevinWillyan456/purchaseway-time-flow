@@ -1,4 +1,4 @@
-import Container from '@/app/_components/Container'
+import { Container } from '@/app/_components/Container'
 import Link from 'next/link'
 import { Button } from './_components/ui/button'
 import { Card, CardContent } from './_components/ui/card'
@@ -7,8 +7,11 @@ import { ROUTES } from './_constants/routes'
 export default function NotFound() {
   return (
     <Container
-      className="animate-fade-in flex items-center justify-center pt-5"
+      className="animate-fade-in flex items-center justify-center"
       tabs={false}
+      style={{
+        paddingTop: '20px'
+      }}
     >
       <Card>
         <CardContent className="flex flex-col items-center justify-center text-center">
