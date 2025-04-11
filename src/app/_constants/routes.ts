@@ -5,3 +5,5 @@ export const ROUTES = {
   PROFILE: '/profile',
   LEGAL: '/legal'
 } as const
+
+export type RouteType = (typeof ROUTES)[keyof typeof ROUTES]

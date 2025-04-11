@@ -41,14 +41,17 @@ function calculateDuration(startTime: string | Date, endTime: string | Date) {
 export function ActivityCard({ activities }: ActivityCardProps) {
   if (activities.length === 0) {
     return (
-      <Card>
+      <Card
+        className="animate-fade-in"
+        style={{ animationDelay: '0.2s', animationFillMode: 'backwards' }}
+      >
         <CardContent className="text-xs">Sem atividades</CardContent>
       </Card>
     )
   }
 
   return (
-    <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <section className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       {activities.map((activity, index) => (
         <Card
           key={activity.id}
@@ -59,7 +62,7 @@ export function ActivityCard({ activities }: ActivityCardProps) {
           }}
         >
           <CardContent className="space-y-1.5 text-xs">
-            <h3>{activity.title}</h3>
+            <h3 className="truncate">{activity.title}</h3>
             <p>
               {`A partir das ${formatTime(activity.startTime)} até ${formatTime(activity.endTime)}`}
             </p>
