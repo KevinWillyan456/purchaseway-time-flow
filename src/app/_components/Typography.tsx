@@ -12,6 +12,18 @@ export function Title({
   )
 }
 
+export function Subtitle({
+  children,
+  className,
+  ...rest
+}: HTMLAttributes<HTMLHeadingElement>) {
+  return (
+    <h2 className={`text-lg ${className}`} {...rest}>
+      {children}
+    </h2>
+  )
+}
+
 export function Paragraph({
   children,
   className,

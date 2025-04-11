@@ -9,7 +9,7 @@ export default function Legal() {
   const router = useRouter()
 
   return (
-    <Container className="animate-fade-in">
+    <Container className="animate-fade-in" tabs={false}>
       <Title>Termos de Uso & Privacidade</Title>
 
       <Paragraph>

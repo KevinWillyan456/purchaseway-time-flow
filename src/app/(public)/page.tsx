@@ -5,7 +5,7 @@ import { ROUTES } from '../_constants/routes'
 
 export default function Index() {
   return (
-    <main className="shadow-bg bg-background animate-fade-in relative mx-auto flex h-dvh w-full max-w-4xl flex-col items-center justify-between gap-5 overflow-y-auto bg-[url('/background-index.png')] bg-cover bg-center p-5 pt-8 [&::-webkit-scrollbar]:hidden">
+    <main className="shadow-bg bg-background animate-fade-in relative mx-auto flex min-h-dvh w-full max-w-4xl flex-col items-center justify-between gap-5 overflow-y-auto bg-[url('/background-index.png')] bg-cover bg-center p-5 pt-8 [&::-webkit-scrollbar]:hidden">
       <div className="flex w-full max-w-80 flex-col gap-5">
         <Image
           src="/logo.png"
