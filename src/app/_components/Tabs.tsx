@@ -10,8 +10,8 @@ export function Tabs() {
 
   const tabs = [
     { name: 'Home', href: ROUTES.HOME, icon: HomeIcon },
-    { name: 'Activities', href: ROUTES.ACTIVITIES, icon: ActivityIcon },
-    { name: 'Profile', href: ROUTES.PROFILE, icon: User2Icon }
+    { name: 'Activities', href: ROUTES.ACTIVITIES.ROOT, icon: ActivityIcon },
+    { name: 'Profile', href: ROUTES.PROFILE.ROOT, icon: User2Icon }
   ]
 
   return (
@@ -21,7 +21,9 @@ export function Tabs() {
           key={tab.href}
           href={tab.href}
           className={`text-foreground hover:text-primary hover:bg-secondary flex flex-col items-center justify-center rounded-lg p-2 text-sm transition-all duration-200 ease-in-out ${
-            pathname === tab.href ? 'text-secondary' : ''
+            pathname === tab.href || pathname.startsWith(`${tab.href}/`)
+              ? 'text-secondary'
+              : ''
           }`}
         >
           <tab.icon size={30} />

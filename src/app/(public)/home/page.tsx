@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <Container className="animate-fade-in">
       <Title>Olá, Visitante!</Title>
-      <Card>
+      <Card className="max-w-sm">
         <CardContent className="text-xs">Sem atividades</CardContent>
       </Card>
 

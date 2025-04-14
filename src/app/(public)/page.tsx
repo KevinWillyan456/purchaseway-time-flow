@@ -1,12 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { Content } from '../_components/Content'
 import { Button } from '../_components/ui/button'
 import { ROUTES } from '../_constants/routes'
 
 export default function Index() {
   return (
-    <main className="shadow-bg bg-background animate-fade-in relative mx-auto flex min-h-dvh w-full max-w-4xl flex-col items-center justify-between gap-5 overflow-y-auto bg-[url('/background-index.png')] bg-cover bg-center p-5 pt-8 [&::-webkit-scrollbar]:hidden">
-      <div className="flex w-full max-w-80 flex-col gap-5">
+    <main className="shadow-bg bg-background animate-fade-in mx-auto flex max-h-dvh min-h-dvh w-full max-w-4xl flex-col items-center justify-between gap-5 overflow-y-auto bg-[url('/background-index.png')] bg-cover bg-center p-5 pt-8 [&::-webkit-scrollbar]:hidden">
+      <Content>
         <Image
           src="/logo.png"
           alt="Pw TimeFlow"
@@ -20,10 +21,9 @@ export default function Index() {
           Descubra para onde seu tempo vai. Visualize, analise e assuma o
           controle do seu dia.
         </div>
-      </div>
-
-      <div className="flex w-full max-w-100 flex-col gap-5">
-        <Button variant="default" className="w-full" size="lg">
+      </Content>
+      <Content>
+        <Button className="w-full" size="lg">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
@@ -56,7 +56,7 @@ export default function Index() {
           <Link href={ROUTES.HOME}>Entrar como visitante</Link>
         </Button>
 
-        <div className="rounded-lg bg-black/15 p-3 shadow-[0px_0px_10px_0px_rgba(46,255,254,0.80)]">
+        <div className="rounded-lg bg-black/40 p-2 shadow-[0px_0px_10px_0px_rgba(46,255,254,0.80)]">
           <span className="text-xs text-neutral-50">
             Ao continuar, você concorda com nossos{' '}
           </span>
@@ -78,7 +78,7 @@ export default function Index() {
             sua privacidade.
           </span>
         </div>
-      </div>
+      </Content>
     </main>
   )
 }

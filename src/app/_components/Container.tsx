@@ -1,4 +1,5 @@
 import { CSSProperties, ReactNode } from 'react'
+import { cn } from '../_lib/utils'
 import { Tabs } from './Tabs'
 
 interface ContainerProps extends React.HTMLAttributes<HTMLElement> {
@@ -18,7 +19,10 @@ export function Container({
   return (
     <main className="shadow-bg bg-background relative mx-auto h-dvh w-full max-w-4xl bg-[url('/background.png')] bg-cover bg-center">
       <div
-        className={`w-full space-y-5 overflow-y-auto p-5 pt-8 [&::-webkit-scrollbar]:hidden ${className}`}
+        className={cn(
+          'w-full space-y-5 overflow-y-auto p-5 pt-8 [&::-webkit-scrollbar]:hidden',
+          className
+        )}
         style={{
           height: tabs ? 'calc(100dvh - 60px)' : '100dvh',
           ...style
