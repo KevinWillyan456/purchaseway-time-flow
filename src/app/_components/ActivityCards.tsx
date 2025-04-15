@@ -1,0 +1,83 @@
+import { Activity } from '../(public)/activities/page'
+import { Button } from './ui/button'
+import { Card, CardContent } from './ui/card'
+
+interface ActivityCardsProps {
+  activities: Activity[]
+}
+
+function formatTime(time: string | Date) {
+  const date = new Date(time)
+
+  if (isNaN(date.getTime())) {
+    return '--:--'
+  }
+
+  const hours = date.getHours()
+  const minutes = date.getMinutes()
+  return `${hours}:${minutes < 10 ? '0' : ''}${minutes}`
+}
+
+function calculateDuration(startTime: string | Date, endTime: string | Date) {
+  const start = new Date(startTime)
+  const end = new Date(endTime)
+
+  if (isNaN(start.getTime()) || isNaN(end.getTime())) {
+    return '--:--'
+  }
+
+  const durationInMs = end.getTime() - start.getTime()
+  if (durationInMs < 0) {
+    return '--:--'
+  }
+
+  const durationInHours = Math.floor(durationInMs / (1000 * 60 * 60))
+  const durationInMinutes = Math.floor(
+    (durationInMs % (1000 * 60 * 60)) / (1000 * 60)
+  )
+
+  return `${durationInHours}h ${durationInMinutes > 0 ? `${durationInMinutes}m` : ''}`
+}
+
+export function ActivityCards({ activities }: ActivityCardsProps) {
+  if (activities.length === 0) {
+    return (
+      <section className="flex justify-center">
+        <Card
+          className="animate-fade-in w-md"
+          style={{ animationDelay: '0.2s', animationFillMode: 'backwards' }}
+        >
+          <CardContent className="text-center text-xs">
+            Sem atividades
+          </CardContent>
+        </Card>
+      </section>
+    )
+  }
+
+  return (
+    <section className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {activities.map((activity, index) => (
+        <Button key={activity.id} asChild className="m-0 block h-auto px-0">
+          <Card
+            className="animate-fade-in bg-card"
+            style={{
+              animationDelay: `${index * 0.05 + 0.2}s`,
+              animationFillMode: 'backwards'
+            }}
+          >
+            <CardContent className="space-y-1.5 text-xs">
+              <h3 className="truncate">{activity.title}</h3>
+              <p>
+                {`A partir das ${formatTime(activity.startTime)} até ${formatTime(activity.endTime)}`}
+              </p>
+              <p>
+                {`Duração: ${calculateDuration(activity.startTime, activity.endTime)}`}
+              </p>
+            </CardContent>
+          </Card>
+        </Button>
+      ))}
+    </section>
+  )
+}

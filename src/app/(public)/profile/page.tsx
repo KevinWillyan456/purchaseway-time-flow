@@ -13,7 +13,7 @@ export default function Profile() {
 
       <Content>
         <Option title="Meu Perfil" url="/profile/my-profile" />
-        <Option title="Gerenciar meus dias" url="/" />
+        <Option title="Gerenciar meus dias" url="/profile/manage-my-days" />
         <Option title="Termos de uso e Políticas de Privacidade" url="/legal" />
       </Content>
     </Container>

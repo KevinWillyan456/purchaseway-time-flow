@@ -1,4 +1,5 @@
 import { HTMLAttributes } from 'react'
+import { cn } from '../_lib/utils'
 
 export function Title({
   children,
@@ -6,7 +7,7 @@ export function Title({
   ...rest
 }: HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h1 className={`text-xl ${className}`} {...rest}>
+    <h1 className={cn('text-xl', className)} {...rest}>
       {children}
     </h1>
   )
@@ -18,7 +19,7 @@ export function Subtitle({
   ...rest
 }: HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h2 className={`text-lg ${className}`} {...rest}>
+    <h2 className={cn('text-lg', className)} {...rest}>
       {children}
     </h2>
   )
@@ -30,7 +31,10 @@ export function Paragraph({
   ...rest
 }: HTMLAttributes<HTMLParagraphElement>) {
   return (
-    <p className={`text-xs [&>span]:font-bold ${className}`} {...rest}>
+    <p
+      className={cn('text-xs sm:text-sm [&>span]:font-bold', className)}
+      {...rest}
+    >
       {children}
     </p>
   )

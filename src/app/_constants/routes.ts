@@ -6,7 +6,8 @@ export const ROUTES = {
   },
   PROFILE: {
     ROOT: '/profile',
-    MY_PROFILE: '/profile/my-profile'
+    MY_PROFILE: '/profile/my-profile',
+    MANAGE_MY_DAYS: '/profile/manage-my-days'
   },
   LEGAL: '/legal'
 } as const

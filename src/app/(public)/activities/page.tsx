@@ -1,10 +1,11 @@
-import { ActivityCard } from '@/app/_components/ActivityCard'
+import { ActivityCards } from '@/app/_components/ActivityCards'
 import { AddButton } from '@/app/_components/AddButton'
 import { Container } from '@/app/_components/Container'
 import { DaySelector } from '@/app/_components/DaySelector'
 import { Subtitle, Title } from '@/app/_components/Typography'
 
 export interface Day {
+  id: string
   value: string
   label: string
 }
@@ -19,18 +20,22 @@ export interface Activity {
   endTime: Date
 }
 
-const days: Day[] = [
-  { value: 'default', label: 'Padrão' },
-  { value: 'day-of-work', label: 'Dia de Trabalho' },
-  { value: 'day-off', label: 'Dia de Folga' },
-  { value: 'vacation', label: 'Férias' },
-  { value: 'holiday', label: 'Feriado' }
+export const days: Day[] = [
+  { id: '1', value: 'default', label: 'Padrão' },
+  {
+    id: '2',
+    value: 'day-of-work',
+    label: 'Dia de Trabalho'
+  },
+  { id: '3', value: 'day-off', label: 'Dia de Folga' },
+  { id: '4', value: 'vacation', label: 'Férias' },
+  { id: '5', value: 'holiday', label: 'Feriado' }
 ]
 
-const activities: Activity[] = [
+export const activities: Activity[] = [
   {
     id: '1',
-    title: 'Projeto de Desenvolvimento',
+    title: 'Projeto de Desenvolvimento ',
     description: 'Desenvolvimento de um novo projeto',
     date: new Date('2025-03-01T00:00:00'),
     type: 'day-of-work',
@@ -67,7 +72,7 @@ export default function Home() {
 
       <DaySelector days={days} />
 
-      <ActivityCard activities={activities} />
+      <ActivityCards activities={activities} />
 
       <AddButton />
     </Container>

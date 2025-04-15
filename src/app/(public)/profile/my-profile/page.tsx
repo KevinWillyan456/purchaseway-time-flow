@@ -1,6 +1,17 @@
 import { Container } from '@/app/_components/Container'
 import { Content } from '@/app/_components/Content'
 import { Subtitle, Title } from '@/app/_components/Typography'
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger
+} from '@/app/_components/ui/alert-dialog'
 import { Avatar, AvatarFallback } from '@/app/_components/ui/avatar'
 import { Button } from '@/app/_components/ui/button'
 import { Input } from '@/app/_components/ui/input'
@@ -34,13 +45,47 @@ export default function MyProfile() {
         </Content>
 
         <Content>
-          <Button className="w-full" size="lg" variant="destructive">
-            Deletar todas as atividades
-          </Button>
+          <AlertDialog>
+            <AlertDialogTrigger asChild>
+              <Button className="w-full" size="lg" variant="destructive">
+                Deletar todas as atividades
+              </Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Tem certeza absoluta?</AlertDialogTitle>
+                <AlertDialogDescription>
+                  Esta ação irá deletar todas as suas atividades. Esta ação não
+                  pode ser desfeita.
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Cancelar</AlertDialogCancel>
+                <AlertDialogAction>Deletar</AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
 
-          <Button className="w-full" size="lg" variant="destructive">
-            Deletar Conta
-          </Button>
+          <AlertDialog>
+            <AlertDialogTrigger asChild>
+              <Button className="w-full" size="lg" variant="destructive">
+                Deletar Conta
+              </Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Tem certeza absoluta?</AlertDialogTitle>
+                <AlertDialogDescription>
+                  Esta ação irá deletar sua conta permanentemente e remover seus
+                  dados dos nossos servidores. Esta ação não pode ser desfeita.
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Cancelar</AlertDialogCancel>
+                <AlertDialogAction>Deletar</AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
         </Content>
       </Content>
     </Container>

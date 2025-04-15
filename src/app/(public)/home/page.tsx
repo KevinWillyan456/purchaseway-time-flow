@@ -7,9 +7,14 @@ export default function Home() {
   return (
     <Container className="animate-fade-in">
       <Title>Olá, Visitante!</Title>
-      <Card className="max-w-sm">
-        <CardContent className="text-xs">Sem atividades</CardContent>
-      </Card>
+
+      <section className="flex justify-center">
+        <Card className="w-md max-w-sm">
+          <CardContent className="text-center text-xs">
+            Sem atividades
+          </CardContent>
+        </Card>
+      </section>
 
       <AddButton />
     </Container>
