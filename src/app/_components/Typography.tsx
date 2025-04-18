@@ -31,10 +31,7 @@ export function Paragraph({
   ...rest
 }: HTMLAttributes<HTMLParagraphElement>) {
   return (
-    <p
-      className={cn('text-xs sm:text-sm [&>span]:font-bold', className)}
-      {...rest}
-    >
+    <p className={cn('text-sm [&>span]:font-bold', className)} {...rest}>
       {children}
     </p>
   )

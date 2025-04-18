@@ -68,7 +68,7 @@
   --secondary: #5ab3f6;
   --secondary-foreground: var(--foreground);
   --muted: #5a5a5a;
-  --muted-foreground: #5a5a5a;
+  --muted-foreground: #a0a0a0;
   --accent: #42f1f1;
   --accent-foreground: var(--foreground);
   --destructive: #920404;

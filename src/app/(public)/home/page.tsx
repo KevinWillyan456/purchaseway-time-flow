@@ -10,7 +10,7 @@ export default function Home() {
 
       <section className="flex justify-center">
         <Card className="w-md max-w-sm">
-          <CardContent className="text-center text-xs">
+          <CardContent className="text-center text-xs sm:text-sm">
             Sem atividades
           </CardContent>
         </Card>

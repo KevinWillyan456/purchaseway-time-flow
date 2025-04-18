@@ -14,7 +14,7 @@ export function DayCards({ days }: DayCardsProps) {
           className="animate-fade-in w-md"
           style={{ animationDelay: '0.2s', animationFillMode: 'backwards' }}
         >
-          <CardContent className="text-xs">
+          <CardContent className="text-xs sm:text-sm">
             <h3 className="text-center">Sem dias personalizados</h3>
           </CardContent>
         </Card>
@@ -25,15 +25,15 @@ export function DayCards({ days }: DayCardsProps) {
   return (
     <section className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       {days.map((days, index) => (
-        <Button asChild key={days.id} className="block">
+        <Button asChild key={days.id}>
           <Card
-            className="animate-fade-in bg-card"
+            className="animate-fade-in bg-card w-full max-w-sm max-md:mx-auto"
             style={{
               animationDelay: `${index * 0.05 + 0.2}s`,
               animationFillMode: 'backwards'
             }}
           >
-            <CardContent className="space-y-1.5 text-xs">
+            <CardContent className="text-xs sm:text-sm">
               <h3 className="truncate text-center">{days.label}</h3>
             </CardContent>
           </Card>

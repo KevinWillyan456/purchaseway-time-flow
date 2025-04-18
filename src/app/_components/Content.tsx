@@ -11,7 +11,7 @@ export function Content({ children, style, className, ...rest }: ContentProps) {
   return (
     <div
       className={cn(
-        'mx-auto flex w-full max-w-sm flex-col items-center justify-center space-y-5',
+        'mx-auto flex w-full max-w-sm flex-col items-center justify-center gap-5',
         className
       )}
       style={style}
