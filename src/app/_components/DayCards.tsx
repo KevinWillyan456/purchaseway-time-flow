@@ -1,3 +1,6 @@
+'use client'
+
+import { useRouter } from 'next/navigation'
 import { Day } from '../(public)/activities/page'
 import { Button } from './ui/button'
 import { Card, CardContent } from './ui/card'
@@ -7,6 +10,8 @@ interface DayCardsProps {
 }
 
 export function DayCards({ days }: DayCardsProps) {
+  const router = useRouter()
+
   if (days.length === 0) {
     return (
       <section className="flex justify-center">
@@ -25,7 +30,11 @@ export function DayCards({ days }: DayCardsProps) {
   return (
     <section className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       {days.map((days, index) => (
-        <Button asChild key={days.id}>
+        <Button
+          asChild
+          key={days.id}
+          onClick={() => router.push(`/days/${days.id}`)}
+        >
           <Card
             className="animate-fade-in bg-card w-full max-w-sm max-md:mx-auto"
             style={{

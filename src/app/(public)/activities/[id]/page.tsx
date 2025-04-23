@@ -1,3 +1,5 @@
+'use client'
+
 import { Container } from '@/app/_components/Container'
 import { Content } from '@/app/_components/Content'
 import { Paragraph, Title } from '@/app/_components/Typography'
@@ -5,6 +7,7 @@ import { Button } from '@/app/_components/ui/button'
 import { ROUTES } from '@/app/_constants/routes'
 import { calculateDuration, formatTime } from '@/app/_lib/utils'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { use } from 'react'
 import { activities } from '../page'
 
@@ -20,6 +23,8 @@ export default function ActivityPage({
   const { id } = use(params)
 
   const activity = activities.find((activity) => activity.id === id)
+
+  const router = useRouter()
 
   if (!activity) {
     return (
@@ -69,8 +74,8 @@ export default function ActivityPage({
       </div>
 
       <Content>
-        <Button asChild className="w-full" size="lg">
-          <Link href={ROUTES.ACTIVITIES.ROOT}>Voltar</Link>
+        <Button className="w-full" size="lg" onClick={() => router.back()}>
+          Voltar
         </Button>
 
         <Button className="w-full" size="lg">
