@@ -1,8 +1,13 @@
+'use client'
+
 import { ActivityCards } from '@/app/_components/ActivityCards'
 import { AddButton } from '@/app/_components/AddButton'
 import { Container } from '@/app/_components/Container'
 import { DaySelector } from '@/app/_components/DaySelector'
 import { Subtitle, Title } from '@/app/_components/Typography'
+import { useDayStore } from '@/app/_stores/dayStore'
+import { Loader2Icon } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 export interface Day {
   id: string
@@ -63,6 +68,32 @@ export const activities: Activity[] = [
 ]
 
 export default function Home() {
+  const [allActivities] = useState<Activity[]>(activities)
+  const [filteredActivities, setFilteredActivities] = useState<Activity[]>([])
+  const { selectedDay, isLoading } = useDayStore()
+
+  useEffect(() => {
+    if (!isLoading) {
+      const filtered = allActivities.filter(
+        (activity) => activity.type === selectedDay.value
+      )
+      setFilteredActivities(filtered)
+    }
+  }, [allActivities, selectedDay.value, isLoading])
+
+  if (isLoading) {
+    return (
+      <Container className="animate-fade-in">
+        <div className="space-y-1.5">
+          <Title className="flex items-center gap-2">
+            <Loader2Icon className="text-secondary animate-spin" />
+            Carregando...
+          </Title>
+        </div>
+      </Container>
+    )
+  }
+
   return (
     <Container className="animate-fade-in">
       <div className="space-y-1.5">
@@ -72,7 +103,7 @@ export default function Home() {
 
       <DaySelector days={days} />
 
-      <ActivityCards activities={activities} />
+      <ActivityCards activities={filteredActivities} />
 
       <AddButton />
     </Container>
