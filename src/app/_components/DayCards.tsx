@@ -16,7 +16,7 @@ export function DayCards({ days }: DayCardsProps) {
     return (
       <section className="flex justify-center">
         <Card
-          className="animate-fade-in w-md"
+          className="animate-fade-in w-sm"
           style={{ animationDelay: '0.2s', animationFillMode: 'backwards' }}
         >
           <CardContent className="text-xs sm:text-sm">
@@ -42,7 +42,7 @@ export function DayCards({ days }: DayCardsProps) {
               animationFillMode: 'backwards'
             }}
           >
-            <CardContent className="text-xs sm:text-sm">
+            <CardContent className="w-full text-xs sm:text-sm">
               <h3 className="truncate text-center">{days.label}</h3>
             </CardContent>
           </Card>

@@ -39,15 +39,13 @@ export default function MyProfile() {
             <Input type="text" id="name" placeholder="Seu nome aqui..." />
           </div>
 
-          <Button className="w-full" size="lg">
-            Salvar
-          </Button>
+          <Button className="w-full">Salvar</Button>
         </Content>
 
         <Content>
           <AlertDialog>
             <AlertDialogTrigger asChild>
-              <Button className="w-full" size="lg" variant="destructive">
+              <Button className="w-full" variant="destructive">
                 Deletar todas as atividades
               </Button>
             </AlertDialogTrigger>
@@ -68,7 +66,7 @@ export default function MyProfile() {
 
           <AlertDialog>
             <AlertDialogTrigger asChild>
-              <Button className="w-full" size="lg" variant="destructive">
+              <Button className="w-full" variant="destructive">
                 Deletar Conta
               </Button>
             </AlertDialogTrigger>

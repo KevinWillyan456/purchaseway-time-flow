@@ -23,7 +23,7 @@ export default function Index() {
         </div>
       </Content>
       <Content>
-        <Button className="w-full" size="lg">
+        <Button className="w-full">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
@@ -52,7 +52,7 @@ export default function Index() {
           Continuar com Google
         </Button>
 
-        <Button asChild variant="default" className="w-full" size="lg">
+        <Button asChild variant="default" className="w-full">
           <Link href={ROUTES.HOME}>Entrar como visitante</Link>
         </Button>
 

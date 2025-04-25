@@ -14,7 +14,7 @@ export function ActivityCards({ activities }: ActivityCardsProps) {
     return (
       <section className="flex justify-center">
         <Card
-          className="animate-fade-in w-md"
+          className="animate-fade-in w-sm"
           style={{ animationDelay: '0.2s', animationFillMode: 'backwards' }}
         >
           <CardContent className="text-center text-xs sm:text-sm">

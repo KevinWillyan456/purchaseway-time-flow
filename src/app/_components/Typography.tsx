@@ -7,7 +7,7 @@ export function Title({
   ...rest
 }: HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h1 className={cn('text-xl', className)} {...rest}>
+    <h1 className={cn('truncate text-xl', className)} {...rest}>
       {children}
     </h1>
   )
@@ -19,7 +19,7 @@ export function Subtitle({
   ...rest
 }: HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h2 className={cn('text-lg', className)} {...rest}>
+    <h2 className={cn('truncate text-lg', className)} {...rest}>
       {children}
     </h2>
   )

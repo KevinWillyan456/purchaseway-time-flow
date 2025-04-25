@@ -32,7 +32,7 @@ export default function DayPage({ params }: { params: Promise<DayPageProps> }) {
         </div>
 
         <Content>
-          <Button className="w-full" size="lg" onClick={() => router.back()}>
+          <Button className="w-full" onClick={() => router.back()}>
             Voltar
           </Button>
         </Content>
@@ -56,7 +56,7 @@ export default function DayPage({ params }: { params: Promise<DayPageProps> }) {
       <ActivityCards activities={filteredActivities} />
 
       <Content>
-        <Button className="w-full" size="lg" onClick={() => router.back()}>
+        <Button className="w-full" onClick={() => router.back()}>
           Voltar
         </Button>
       </Content>

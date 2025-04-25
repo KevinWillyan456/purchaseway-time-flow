@@ -59,7 +59,6 @@ export default function Legal() {
         <Button
           variant="default"
           className="w-full max-w-sm"
-          size="lg"
           onClick={() => router.back()}
         >
           Voltar

@@ -9,7 +9,7 @@ export default function Home() {
       <Title>Olá, Visitante!</Title>
 
       <section className="flex justify-center">
-        <Card className="w-md max-w-sm">
+        <Card className="w-sm">
           <CardContent className="text-center text-xs sm:text-sm">
             Sem atividades
           </CardContent>

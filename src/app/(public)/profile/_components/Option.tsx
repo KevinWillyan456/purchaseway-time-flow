@@ -13,7 +13,7 @@ interface OptionProps {
 
 export function Option({ title, url = ROUTES.INDEX, className }: OptionProps) {
   return (
-    <Button asChild className={cn('block w-full truncate', className)}>
+    <Button asChild className={cn('w-full truncate', className)}>
       <Link href={url}>{title}</Link>
     </Button>
   )

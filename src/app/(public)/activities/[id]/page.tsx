@@ -42,7 +42,7 @@ export default function ActivityPage({
         </Content>
 
         <Content>
-          <Button asChild className="w-full" size="lg">
+          <Button asChild className="w-full">
             <Link href={ROUTES.ACTIVITIES.ROOT}>Voltar</Link>
           </Button>
         </Content>
@@ -54,7 +54,7 @@ export default function ActivityPage({
     <Container className="animate-fade-in">
       <Title>{activity.title}</Title>
 
-      <Paragraph>
+      <Paragraph className="line-clamp-5">
         <span>Descrição: </span>
         {activity.description}
       </Paragraph>
@@ -74,15 +74,13 @@ export default function ActivityPage({
       </div>
 
       <Content>
-        <Button className="w-full" size="lg" onClick={() => router.back()}>
+        <Button className="w-full" onClick={() => router.back()}>
           Voltar
         </Button>
 
-        <Button className="w-full" size="lg">
-          Editar atividade
-        </Button>
+        <Button className="w-full">Editar atividade</Button>
 
-        <Button className="w-full" size="lg" variant="destructive">
+        <Button className="w-full" variant="destructive">
           Deletar atividade
         </Button>
       </Content>
