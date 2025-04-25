@@ -45,7 +45,7 @@ export function DaySelector({ days }: { days: Day[] }) {
           role="combobox"
           aria-expanded={open}
           aria-label="Selecione o dia"
-          className="w-[200px] justify-between"
+          className="w-full max-w-[200px] justify-between truncate"
         >
           {days.find((day) => day.value === selectedDay.value)?.label ||
             'Sem dia'}

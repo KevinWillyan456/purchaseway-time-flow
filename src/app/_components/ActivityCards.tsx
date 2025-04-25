@@ -26,7 +26,7 @@ export function ActivityCards({ activities }: ActivityCardsProps) {
   }
 
   return (
-    <section className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <section className="mb-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       {activities.map((activity, index) => (
         <Button
           key={activity.id}
@@ -41,10 +41,10 @@ export function ActivityCards({ activities }: ActivityCardsProps) {
             <Card className="bg-transparent">
               <CardContent className="space-y-1.5 text-xs sm:text-sm">
                 <h3 className="truncate">{activity.title}</h3>
-                <p>
+                <p className="truncate">
                   {`A partir das ${formatTime(activity.startTime)} até ${formatTime(activity.endTime)}`}
                 </p>
-                <p>
+                <p className="truncate">
                   {`Duração: ${calculateDuration(activity.startTime, activity.endTime)}`}
                 </p>
               </CardContent>

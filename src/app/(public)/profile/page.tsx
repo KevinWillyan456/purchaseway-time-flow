@@ -11,7 +11,7 @@ export default function Profile() {
         <Subtitle>Escolha o que deseja</Subtitle>
       </div>
 
-      <Content>
+      <Content className="w-full max-w-sm">
         <Option title="Meu Perfil" url="/profile/my-profile" />
         <Option title="Gerenciar meus dias" url="/profile/manage-my-days" />
         <Option title="Termos de uso e Políticas de Privacidade" url="/legal" />
